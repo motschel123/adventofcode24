@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af9f6b88-ffb0-49cd-97b6-a904590df958" name="Changes" comment="update gitignore to hide inputs">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day02.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="af9f6b88-ffb0-49cd-97b6-a904590df958" name="Changes" comment="Day 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732973406076</updated>
       <workItem from="1732973407058" duration="4288000" />
-      <workItem from="1733132945639" duration="7171000" />
+      <workItem from="1733132945639" duration="7532000" />
     </task>
     <task id="LOCAL-00001" summary="Advent of code 2024">
       <option name="closed" value="true" />
@@ -125,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733064032351</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Day 2">
+      <option name="closed" value="true" />
+      <created>1733152361544</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733152361544</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +139,8 @@
     <MESSAGE value="Advent of code 2024" />
     <MESSAGE value="Day 01" />
     <MESSAGE value="update gitignore to hide inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gitignore to hide inputs" />
+    <MESSAGE value="Day 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 2" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
