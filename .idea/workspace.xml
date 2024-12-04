@@ -4,28 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af9f6b88-ffb0-49cd-97b6-a904590df958" name="Changes" comment="Day 2" />
+    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="gitignore .idea folder">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Kotlin Class" />
-        <option value="Kotlin File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2pZV5fnq4wNFUtBdVzsLo5a6kkj" />
+  <component name="ProjectId" id="2pfQirNYnwR1CrbB0zUVND44vV6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,38 +28,26 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Kotlin.Day01Kt.executor": "Run",
-    "Kotlin.Day02Kt.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.Day03Kt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/marcelschoeckel/Dev/aoc2024/src/main/kotlin",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.Day02Kt">
-    <configuration name="Day01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day01Kt" />
-      <module name="aoc2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day02Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day02Kt" />
-      <module name="aoc2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.MainKt" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Day03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day03Kt" />
       <module name="aoc2024" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,9 +55,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Day02Kt" />
-        <item itemvalue="Kotlin.Day01Kt" />
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.Day03Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -89,58 +70,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="af9f6b88-ffb0-49cd-97b6-a904590df958" name="Changes" comment="" />
-      <created>1732973406076</created>
+      <changelist id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="gitignore .idea folder" />
+      <created>1733154779605</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732973406076</updated>
-      <workItem from="1732973407058" duration="4288000" />
-      <workItem from="1733132945639" duration="7532000" />
+      <updated>1733154779605</updated>
+      <workItem from="1733154780648" duration="15000" />
+      <workItem from="1733300784050" duration="5819000" />
     </task>
-    <task id="LOCAL-00001" summary="Advent of code 2024">
-      <option name="closed" value="true" />
-      <created>1732973964822</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1732973964823</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Day 01">
-      <option name="closed" value="true" />
-      <created>1733063753190</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1733063753190</updated>
-    </task>
-    <task id="LOCAL-00003" summary="update gitignore to hide inputs">
-      <option name="closed" value="true" />
-      <created>1733064032351</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1733064032351</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Day 2">
-      <option name="closed" value="true" />
-      <created>1733152361544</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1733152361544</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Advent of code 2024" />
-    <MESSAGE value="Day 01" />
-    <MESSAGE value="update gitignore to hide inputs" />
-    <MESSAGE value="Day 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 2" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
