@@ -1,79 +1,83 @@
 package org.example
 
 import java.io.File
+import kotlin.system.measureTimeMillis
 
 fun main() {
     val inputLines = File("src/main/resources/day05.txt").readLines()
 
-    // Map of all rules:
-    // Where rules[pageNum] is a set of all number which must appear after pageNum
-    val rules = inputLines
-        .takeWhile { it.isNotEmpty() }
-        .map {
-            it.split('|').map(Integer::valueOf)
-        }
-        .map { hashMapOf(Pair(it[0], mutableSetOf(it[1]))) }
-        .reduce { acc, hashMap ->
-            val key = hashMap.keys.first()
-            val value = hashMap[key]!!
-            acc.getOrPut(key) { value }.addAll(value)
-            acc
-        }
-    // List of all updates
-    // Each update is a List<Int> of page numbers
-    val updates = inputLines
-        .dropWhile { it.isEmpty() || it.contains('|') }
-        .map { it.split(',').map { intStr -> Integer.valueOf(intStr) } }
+    println("Execution time " + measureTimeMillis {
+        // Map of all rules:
+        // Where rules[pageNum] is a set of all number which must appear after pageNum
+        val rules = inputLines
+            .takeWhile { it.isNotEmpty() }
+            .map {
+                it.split('|').map(Integer::valueOf)
+            }
+            .map { hashMapOf(Pair(it[0], mutableSetOf(it[1]))) }
+            .reduce { acc, hashMap ->
+                val key = hashMap.keys.first()
+                val value = hashMap[key]!!
+                acc.getOrPut(key) { value }.addAll(value)
+                acc
+            }
+        // List of all updates
+        // Each update is a List<Int> of page numbers
+        val updates = inputLines
+            .dropWhile { it.isEmpty() || it.contains('|') }
+            .map { it.split(',').map { intStr -> Integer.valueOf(intStr) } }
 
-    // Map each update to:
-    // For each update, the resulting map looks like this:
-    // map[pageNum] set of all numbers appearing before pageNum
-    val updatesMapping = updates.map { updateList ->
-        updateList.mapIndexed{ index, pageNum ->
-            hashMapOf(Pair(pageNum, updateList.subList(0, index)
-            .toHashSet()))
-        }.reduce { acc, hashMap ->
-            acc.putAll(hashMap)
-            acc
+        // Map each update to:
+        // For each update, the resulting map looks like this:
+        // map[pageNum] set of all numbers appearing before pageNum
+        val updatesMapping = updates.map { updateList ->
+            updateList.mapIndexed { index, pageNum ->
+                hashMapOf(Pair(pageNum, updateList.subList(0, index).toHashSet()))
+            }.reduce { acc, hashMap ->
+                acc.putAll(hashMap)
+                acc
+            }
         }
-    }
 
-    println("Part One:")
-    // For each update:
-    // For each pageNum, check if there is at least on number before "pageNum" that must appear after "pagenum"
-    val result1 = updatesMapping
-        .map{ mapping ->
-            mapping.all { (num, befores) ->
-                rules[num]?.any { it in befores } != true
-            } }
-        .zip(updates)
-    // filter all valid updates and sum
-    val summedResult1 = result1
-        .filter { (result, _) -> result }
-        .map { (_, updates) ->
-            updates[updates.size / 2] }
-        .reduce{ acc, i -> acc + i}
-    println(summedResult1)
+        println("Part One:")
+        // For each update:
+        // For each pageNum, check if there is at least on number before "pageNum" that must appear after "pagenum"
+        val result1 = updatesMapping
+            .map { mapping ->
+                mapping.all { (num, befores) ->
+                    rules[num]?.any { it in befores } != true
+                }
+            }
+            .zip(updates)
+        // filter all valid updates and sum
+        val summedResult1 = result1
+            .filter { (result, _) -> result }
+            .map { (_, updates) ->
+                updates[updates.size / 2]
+            }
+            .reduce { acc, i -> acc + i }
+        println(summedResult1)
 
 
-    println("Part Two:")
-    // filter all invalid updates
-    // correct them by adding each update, pageNum by pageNum into a binary tree and flattening afterward
-    val result2 = result1
-        .filter { (valid, _) -> !valid }
-        .map { (_, updates ) ->
-            val tree = BinaryTree(rules)
-            updates.forEach { tree.insert(it) }
-            tree.flatten()
-        }
-    // sum up
-    val summedResult2 = result2
-        .map {
-            it[it.size / 2]
-        }
-        .reduce{ acc, i -> acc + i}
+        println("Part Two:")
+        // filter all invalid updates
+        // correct them by adding each update, pageNum by pageNum into a binary tree and flattening afterward
+        val result2 = result1
+            .filter { (valid, _) -> !valid }
+            .map { (_, updates) ->
+                val tree = BinaryTree(rules)
+                updates.forEach { tree.insert(it) }
+                tree.flatten()
+            }
+        // sum up
+        val summedResult2 = result2
+            .map {
+                it[it.size / 2]
+            }
+            .reduce { acc, i -> acc + i }
 
-    println(summedResult2)
+        println(summedResult2)
+    } + "ms")
 }
 
 class BinaryTree(val rules: HashMap<Int, MutableSet<Int>>) {
