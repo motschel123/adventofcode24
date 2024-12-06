@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="Day 5&#10;TREES">
+    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="Add timing">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day06.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day03.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,24 +38,26 @@
     "Kotlin.Day03Kt.executor": "Run",
     "Kotlin.Day04Kt.executor": "Run",
     "Kotlin.Day05Kt.executor": "Run",
+    "Kotlin.Day06Kt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/marcelschoeckel/Dev/aoc2024/src/main/kotlin",
+    "last_opened_file_path": "/Users/marcelschoeckel/Dev/aoc2024/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day05Kt">
+  <component name="RunManager" selected="Kotlin.Day06Kt">
     <configuration name="Day03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Day03Kt" />
       <module name="aoc2024" />
@@ -76,8 +79,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day06Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day06Kt" />
+      <module name="aoc2024" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Day06Kt" />
         <item itemvalue="Kotlin.Day05Kt" />
         <item itemvalue="Kotlin.Day04Kt" />
         <item itemvalue="Kotlin.Day03Kt" />
@@ -102,7 +113,8 @@
       <updated>1733154779605</updated>
       <workItem from="1733154780648" duration="15000" />
       <workItem from="1733300784050" duration="8452000" />
-      <workItem from="1733398713702" duration="10719000" />
+      <workItem from="1733398713702" duration="13288000" />
+      <workItem from="1733482852756" duration="17821000" />
     </task>
     <task id="LOCAL-00001" summary="Day 3&#10;REGEX">
       <option name="closed" value="true" />
@@ -128,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733414863771</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add timing">
+      <option name="closed" value="true" />
+      <created>1733415415661</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733415415661</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +158,7 @@
     <MESSAGE value="Day 3&#10;REGEX" />
     <MESSAGE value="Day 4&#10;LOOPS" />
     <MESSAGE value="Day 5&#10;TREES" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 5&#10;TREES" />
+    <MESSAGE value="Add timing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add timing" />
   </component>
 </project>
