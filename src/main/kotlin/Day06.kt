@@ -5,8 +5,9 @@ import java.io.FileWriter
 
 fun main() {
     val inputLines =
-        File("src/main/resources/day06.txt").readLines()
-    val map = inputLines.map { it.toCharArray().toTypedArray() }.toTypedArray()
+        File("src/main/resources/day06_jojo.txt").readLines()
+    val initialMap = inputLines.map { it.toCharArray().toTypedArray() }.toTypedArray()
+    val map = Array(initialMap.size) { i -> initialMap[i].copyOf() }
     // find start
     var startCol: Int = -1
     val startRow = map.indexOfFirst {
@@ -18,15 +19,19 @@ fun main() {
         false
     }
     println("Part One:")
-    val moveList = mutableListOf<Pair<Int, Int>>()
+    val moveList = mutableListOf<Triple<Int, Int, Char>>()
+    val moves = HashMap<Pair<Int, Int>, MutableSet<Char>>()
     var row = startRow
     var col = startCol
     try {
         do {
+            moveList.add(Triple(row, col, map[row][col]))
+            moves.getOrPut(Pair(row, col)) { mutableSetOf() }.add(map[row][col])
+
             val next = takeStep(row, col, map)
             row = next.first
             col = next.second
-            moveList.add(next)
+
         } while (true)
     } catch (_: ArrayIndexOutOfBoundsException) {}
     val result = map.flatten().map {
@@ -40,18 +45,20 @@ fun main() {
 
     // Check injection
     var possibleInjections = 0
-    for ((testInjRow, testInjCol) in moveList.subList(0, moveList.size - 1)) {
+    val iterator = moveList.subList(0, moveList.size - 1).iterator()
+    var prev = iterator.next()
+    var x = 0
+    while (iterator.hasNext()) {
+        x++
+        val curr = iterator.next()
         // Deepcopy map
-        val injectionMap = Array(map.size) { i -> map[i].copyOf() }
+        val injectionMap = Array(initialMap.size) { i -> initialMap[i].copyOf() }
         // inject new wall
-        injectionMap[testInjRow][testInjRow] = '#'
-        // Collect all moves
-        val moves = HashMap<Pair<Int, Int>, MutableSet<Char>>()
-        injectionMap.forEachIndexed { i, arr ->
-            arr.forEachIndexed { j, c ->
-                moves[Pair(i, j)] = if (charArrayOf('<', '>', '^', 'v').contains(c)) mutableSetOf(c) else mutableSetOf()
-            }
-        }
+        val (wallInjRow, wallInjCol, _) = curr
+        injectionMap[wallInjRow][wallInjCol] = '#'
+        // inject start position
+        val (testInjRow, testInjCol, testInjDir) = prev
+        injectionMap[testInjRow][testInjCol] = testInjDir
 
         try {
             var tmpRow = testInjRow
@@ -60,20 +67,19 @@ fun main() {
                 val tmpNext = takeStep(tmpRow, tmpCol, injectionMap)
                 tmpRow = tmpNext.first
                 tmpCol = tmpNext.second
-                val pastMovesHere = moves.getOrDefault(Pair(tmpRow, tmpCol), mutableSetOf())
-                if (pastMovesHere.contains(injectionMap[tmpRow][tmpCol])) {
+
+
+                if (moves.getOrPut(tmpNext) {HashSet()}.contains(injectionMap[tmpRow][tmpCol])) {
                     possibleInjections++
                     break
                 }
-                pastMovesHere.add(injectionMap[tmpRow][tmpCol])
-                moves[Pair(tmpRow, tmpCol)] = pastMovesHere
+
+                moves[tmpNext]?.add(injectionMap[tmpRow][tmpCol])
             } while (true)
-        } catch (_: ArrayIndexOutOfBoundsException) {
-        }
+        } catch (_: ArrayIndexOutOfBoundsException) { }
+
+        prev = curr
     }
-
-    File("src/main/resources/day06_vis.txt").writeText(map.toList().joinToString("\n") { it.joinToString("") })
-
     println("Part Two: $possibleInjections")
 }
 
