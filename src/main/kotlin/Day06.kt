@@ -1,123 +1,82 @@
 package org.example
 
 import java.io.File
-import java.io.FileWriter
+
 
 fun main() {
     val inputLines =
-        File("src/main/resources/day06_jojo.txt").readLines()
-    val initialMap = inputLines.map { it.toCharArray().toTypedArray() }.toTypedArray()
-    val map = Array(initialMap.size) { i -> initialMap[i].copyOf() }
+        File("src/main/resources/day06.txt").readLines()
+    val data = inputLines.map { it.toCharArray().toTypedArray() }.toTypedArray()
+    val moveChars: Set<Char> = setOf('<', '>', '^', 'v')
+
     // find start
-    var startCol: Int = -1
-    val startRow = map.indexOfFirst {
-        val idx = it.indexOfFirst { c -> c == '>' || c == '<' || c == '^' || c == 'v' }
-        if (idx > -1) {
-            startCol = idx
-            return@indexOfFirst true
-        }
-        false
+    val startRow: Int = data.indexOfFirst {
+        val idx = it.indexOfFirst { c -> moveChars.contains(c) }
+        idx > -1
     }
-    println("Part One:")
-    val moveList = mutableListOf<Triple<Int, Int, Char>>()
-    val moves = HashMap<Pair<Int, Int>, MutableSet<Char>>()
+    val startCol: Int = data[startRow].indexOfFirst { c -> moveChars.contains(c) }
+
+
     var row = startRow
     var col = startCol
-    try {
-        do {
-            moveList.add(Triple(row, col, map[row][col]))
-            moves.getOrPut(Pair(row, col)) { mutableSetOf() }.add(map[row][col])
+    var direction = data[startRow][startCol]
+    var visitedCoords: HashMap<Pair<Int, Int>, HashSet<Char>> = HashMap()
+    while (true) {
+        visitedCoords.getOrPut(Pair(row, col)) { HashSet() }.add(direction)
 
-            val next = takeStep(row, col, map)
-            row = next.first
-            col = next.second
+        val (nextRow, nextCol) = nextCoords(row, col, direction)
+        if (nextRow < 0 ||
+            nextRow >= data.size ||
+            nextCol < 0 ||
+            nextCol >= data[0].size)
+            break
 
-        } while (true)
-    } catch (_: ArrayIndexOutOfBoundsException) {}
-    val result = map.flatten().map {
-        if (it == '>'  || it == '<' || it == '^' || it == 'v')
-            'X'
-        else
-            it
-    }.count { it == 'X' }
-
-    println("$result")
-
-    // Check injection
-    var possibleInjections = 0
-    val iterator = moveList.subList(0, moveList.size - 1).iterator()
-    var prev = iterator.next()
-    var x = 0
-    while (iterator.hasNext()) {
-        x++
-        val curr = iterator.next()
-        // Deepcopy map
-        val injectionMap = Array(initialMap.size) { i -> initialMap[i].copyOf() }
-        // inject new wall
-        val (wallInjRow, wallInjCol, _) = curr
-        injectionMap[wallInjRow][wallInjCol] = '#'
-        // inject start position
-        val (testInjRow, testInjCol, testInjDir) = prev
-        injectionMap[testInjRow][testInjCol] = testInjDir
-
-        try {
-            var tmpRow = testInjRow
-            var tmpCol = testInjCol
-            do {
-                val tmpNext = takeStep(tmpRow, tmpCol, injectionMap)
-                tmpRow = tmpNext.first
-                tmpCol = tmpNext.second
-
-
-                if (moves.getOrPut(tmpNext) {HashSet()}.contains(injectionMap[tmpRow][tmpCol])) {
-                    possibleInjections++
-                    break
-                }
-
-                moves[tmpNext]?.add(injectionMap[tmpRow][tmpCol])
-            } while (true)
-        } catch (_: ArrayIndexOutOfBoundsException) { }
-
-        prev = curr
+        if (data[nextRow][nextCol] == '#')
+            direction = rotate90(direction)
+        else {
+            row = nextRow
+            col = nextCol
+        }
     }
-    println("Part Two: $possibleInjections")
-}
+    println("Part One: ${visitedCoords.keys.size}")
 
-fun takeStep(row: Int, col: Int, map: Array<Array<Char>>): Pair<Int, Int>  {
-    var dir = map[row][col]
-    // Next pos
-    var nextCoords = nextCoords(row, col, dir)
-    // Turn if wall
-    if (map[nextCoords.first][nextCoords.second] == '#') {
-        dir = rotate90(dir)
-        nextCoords = nextCoords(row, col, dir)
-        if (map[nextCoords.first][nextCoords.second] == '#') {
-            dir = rotate90(dir)
-            nextCoords = nextCoords(row, col, dir)
-            if (map[nextCoords.first][nextCoords.second] == '#') {
-                dir = rotate90(dir)
-                nextCoords = nextCoords(row, col, dir)
-                if (map[nextCoords.first][nextCoords.second] == '#') {
-                    throw Exception("Err: Stuck in one pos: row = $row, col = $col")
-                }
+    var result2 = 0
+    val visitedPos = visitedCoords.keys.toList()
+    for ((objRow, objCol) in visitedPos) {
+        if (objRow == startRow && objCol == startCol) continue
+
+        val objData = Array(data.size) { i -> data[i].copyOf() }
+        objData[objRow][objCol] = '#'
+
+        row = startRow
+        col = startCol
+        direction = objData[startRow][startCol]
+        visitedCoords = HashMap()
+        while (true) {
+            if (visitedCoords[Pair(row, col)]?.contains(direction) == true) {
+                result2++
+                break
+            }
+
+            visitedCoords.getOrPut(Pair(row, col)) { HashSet() }.add(direction)
+
+            val (nextRow, nextCol) = nextCoords(row, col, direction)
+            if (nextRow < 0 ||
+                nextRow >= objData.size ||
+                nextCol < 0 ||
+                nextCol >= objData[0].size
+            )
+                break
+
+            if (objData[nextRow][nextCol] == '#')
+                direction = rotate90(direction)
+            else {
+                row = nextRow
+                col = nextCol
             }
         }
     }
-    val (nextRow, nextCol) = nextCoords
-
-    map[row][col] = dir
-    map[nextRow][nextCol] = dir
-    return Pair(nextRow, nextCol)
-}
-
-fun rotate90(dir: Char): Char {
-    return when (dir) {
-        '^' -> '>'
-        '>' -> 'v'
-        'v' -> '<'
-        '<' -> '^'
-        else -> '?'
-    }
+    println("Part Two: $result2")
 }
 
 fun nextCoords(row: Int, col: Int, dir: Char): Pair<Int, Int> {
@@ -131,3 +90,13 @@ fun nextCoords(row: Int, col: Int, dir: Char): Pair<Int, Int> {
     }
     return Pair(nextRow, nextCol)
 }
+
+fun rotate90(dir: Char): Char {
+        return when (dir) {
+            '^' -> '>'
+            '>' -> 'v'
+            'v' -> '<'
+            '<' -> '^'
+            else -> '?'
+        }
+    }

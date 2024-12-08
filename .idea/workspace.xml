@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="Add timing">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day06.kt" afterDir="false" />
+    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="Day 6 &#10;:(">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day07.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day08.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day03.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day03.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day06.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -39,6 +41,9 @@
     "Kotlin.Day04Kt.executor": "Run",
     "Kotlin.Day05Kt.executor": "Run",
     "Kotlin.Day06Kt.executor": "Run",
+    "Kotlin.Day06_2Kt.executor": "Run",
+    "Kotlin.Day06_3Kt.executor": "Run",
+    "Kotlin.Day07Kt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -57,21 +62,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day06Kt">
-    <configuration name="Day03Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day03Kt" />
-      <module name="aoc2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day04Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day04Kt" />
-      <module name="aoc2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Kotlin.Day08Kt">
     <configuration name="Day05Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Day05Kt" />
       <module name="aoc2024" />
@@ -86,12 +77,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day06Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day06Kt" />
+      <module name="aoc2024" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day06_2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day06_2Kt" />
+      <module name="aoc2024" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day07Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day07Kt" />
+      <module name="aoc2024" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day08Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day08Kt" />
+      <module name="aoc2024" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Day08Kt" />
+        <item itemvalue="Kotlin.Day07Kt" />
         <item itemvalue="Kotlin.Day06Kt" />
-        <item itemvalue="Kotlin.Day05Kt" />
-        <item itemvalue="Kotlin.Day04Kt" />
-        <item itemvalue="Kotlin.Day03Kt" />
+        <item itemvalue="Kotlin.Day06_2Kt" />
+        <item itemvalue="Kotlin.Day06Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +134,8 @@
       <workItem from="1733154780648" duration="15000" />
       <workItem from="1733300784050" duration="8452000" />
       <workItem from="1733398713702" duration="13288000" />
-      <workItem from="1733482852756" duration="17821000" />
+      <workItem from="1733482852756" duration="24404000" />
+      <workItem from="1733522888867" duration="13926000" />
     </task>
     <task id="LOCAL-00001" summary="Day 3&#10;REGEX">
       <option name="closed" value="true" />
@@ -148,7 +169,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733415415661</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Day 6 &#10;Part no why you no work?">
+      <option name="closed" value="true" />
+      <created>1733506440253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733506440253</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Day 6 &#10;:(">
+      <option name="closed" value="true" />
+      <created>1733510098186</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733510098186</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +196,8 @@
     <MESSAGE value="Day 4&#10;LOOPS" />
     <MESSAGE value="Day 5&#10;TREES" />
     <MESSAGE value="Add timing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add timing" />
+    <MESSAGE value="Day 6 &#10;Part no why you no work?" />
+    <MESSAGE value="Day 6 &#10;:(" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 6 &#10;:(" />
   </component>
 </project>
