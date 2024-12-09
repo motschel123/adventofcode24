@@ -13,51 +13,86 @@ fun main() {
     var isFile: Boolean = true
     var fileId: Int = 0
 
-    val fileSysString = input
+    val fileSys = input
         .map{ digit ->
             if (isFile) {
                 isFile = false
-                val str = fileId.toString().repeat(digit)
+                val list = List(digit) { fileId }
                 fileId++
-                return@map str
+                return@map list
             } else {
                 isFile = true
-                return@map ".".repeat(digit)
+                val list = List(digit) { -1 }
+                return@map list
             }
         }
-        .joinToString("")
-        .toCharArray()
-        .toTypedArray()
+        .filter { it.isNotEmpty() }
+
+    println("Part One: ")
+    val fileSys1 = fileSys
+        .flatten()
         .toMutableList()
-
-    var i = 0
-    var j = fileSysString.size - 1
-
-    while (i < j) {
-        if (fileSysString[i] != '.') {
-            i++
+    var i1 = 0
+    var j1 = fileSys1.size - 1
+    while (i1 < j1) {
+        if (fileSys1[i1] != -1) {
+            i1++
             continue
         }
-        if (fileSysString[j] == '.') {
-            j--
+        if (fileSys1[j1] == -1) {
+            j1--
             continue
         }
 
-        fileSysString[i] = fileSysString[j]
-        fileSysString[j] = '.'
-        i++
-        j--
+        fileSys1[i1] = fileSys1[j1]
+        fileSys1[j1] = -1
+        i1++
+        j1--
     }
 
-    println(fileSysString.joinToString(""))
+    val result1 = fileSys1
+        .takeWhile { it != -1 }
+        .mapIndexed { idx, id ->
+            idx * id
+        }.sumOf { it.toLong() }
 
-    val result = fileSysString
-        .takeWhile { it != '.' }
-        .mapIndexed { idx, c ->
-            c.digitToInt().toULong() * idx.toULong()
+    println("$result1")
+
+    println("Part Two: ")
+
+    val fileSys2 = fileSys.toMutableList()
+    // Loop all blocks back to front
+    for (i in fileSys2.indices.reversed()) {
+        val block = fileSys2[i]
+        // skip empty blocks
+        if (block[0] == -1)
+            continue
+        // find first suitable empty block before this one
+        val idxEmptyBlock = fileSys2.subList(0, i).indexOfFirst { b ->
+            b[0] == -1 &&
+                    b.size >= block.size }
+        // skip if not found
+        if (idxEmptyBlock == -1)
+            continue
+        // empty working block
+        fileSys2[i] = List(block.size) {-1}
+        // split empty block leftovers in extra entry
+        val sizeDiff = fileSys2[idxEmptyBlock].size - block.size
+        if (sizeDiff > 0) {
+            fileSys2.add(idxEmptyBlock + 1, List(sizeDiff) { -1 })
         }
-        .sum()
+        // replace empty block with working block
+        fileSys2[idxEmptyBlock] = List(block.size) { block[0] }
+    }
 
-    println(result)
+
+    val result2 = fileSys2
+        .flatten()
+        .mapIndexed { idx, id ->
+            if (id == -1) return@mapIndexed 0
+            idx * id
+        }.sumOf { it.toLong() }
+
+    println(result2)
 }
 
