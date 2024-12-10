@@ -10,8 +10,8 @@ fun main() {
         .filter { it in '0'..'9' }
         .map(Char::digitToInt)
 
-    var isFile: Boolean = true
-    var fileId: Int = 0
+    var isFile = true
+    var fileId = 0
 
     val fileSys = input
         .map{ digit ->
@@ -61,24 +61,28 @@ fun main() {
     println("Part Two: ")
 
     val fileSys2 = fileSys.toMutableList()
+
     // Loop all blocks back to front
-    for (i in fileSys2.indices.reversed()) {
-        val block = fileSys2[i]
+    var i2 = fileSys2.size
+    while (i2 > 0) {
+        i2--
+        val block = fileSys2[i2]
         // skip empty blocks
         if (block[0] == -1)
             continue
         // find first suitable empty block before this one
-        val idxEmptyBlock = fileSys2.subList(0, i).indexOfFirst { b ->
+        val idxEmptyBlock = fileSys2.subList(0, i2).indexOfFirst { b ->
             b[0] == -1 &&
                     b.size >= block.size }
         // skip if not found
         if (idxEmptyBlock == -1)
             continue
         // empty working block
-        fileSys2[i] = List(block.size) {-1}
+        fileSys2[i2] = List(block.size) {-1}
         // split empty block leftovers in extra entry
         val sizeDiff = fileSys2[idxEmptyBlock].size - block.size
         if (sizeDiff > 0) {
+            i2++
             fileSys2.add(idxEmptyBlock + 1, List(sizeDiff) { -1 })
         }
         // replace empty block with working block
@@ -90,8 +94,8 @@ fun main() {
         .flatten()
         .mapIndexed { idx, id ->
             if (id == -1) return@mapIndexed 0
-            idx * id
-        }.sumOf { it.toLong() }
+            (idx * id).toLong()
+        }.sum()
 
     println(result2)
 }
