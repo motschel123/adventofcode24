@@ -6,11 +6,9 @@ fun handlePlant1(row: Int, col: Int, field: Array<Array<Char>>): Pair<Int, Int> 
     val plant = field[row][col]
     if (plant.isLowerCase())
         return Pair(0,0)
-
     field[row][col] = field[row][col].lowercaseChar()
 
     val surroundingPlants = surroundingPlants(plant, row, col, field)
-
     return (surroundingPlants
         .map {
             handlePlant1(it.first, it.second, field)
@@ -125,9 +123,7 @@ fun plantsInRegion(plant: Char, row: Int, col: Int, field: Array<Array<Char>>): 
 
     field[row][col] = field[row][col].lowercaseChar()
 
-    val surroundingPlants = surroundingPlants(plant, row, col, field)
-
-    return surroundingPlants
+    return surroundingPlants(plant, row, col, field)
         .flatMap {
             plantsInRegion(field[row][col], it.first, it.second, field)
         } + Pair(row, col)
@@ -154,6 +150,7 @@ fun findNextRegion(field: Array<Array<Char>>): Array<Array<Char>>? {
         maxRow = maxOf(maxRow, row)
         maxCol = maxOf(maxCol, col)
     }
+
     val sizeRow = maxRow - minRow + 1
     val sizeCol = maxCol - minCol + 1
 
