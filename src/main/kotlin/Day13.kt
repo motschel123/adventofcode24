@@ -1,6 +1,8 @@
 package org.example
 
 import java.io.File
+import java.math.BigInteger
+import java.math.MathContext
 
 
 fun main() {
@@ -10,26 +12,30 @@ fun main() {
         .asSequence()
         .chunked(4)
         .map { it.filter(String::isNotEmpty) }
-        .map { line ->
-            val (aLeft, aRight) = line[0].split(",")
-            val x_a = aLeft.split("+")[1].toULong()
-            val y_a = aRight.split("+")[1].toULong()
+        .map { lines ->
+            val regexRes = Regex("\\d+").findAll(lines.joinToString("")).toList().map { it.value.toBigDecimal()}
+            var (ax, ay, bx, by, px) = regexRes
+            var py = regexRes[5]
 
-            val (bLeft, bRight) = line[1].split(",")
-            val x_b = bLeft.split("+")[1].toULong()
-            val y_b = bRight.split("+")[1].toULong()
+            px += 10000000000000.toBigDecimal()
+            py += 10000000000000.toBigDecimal()
 
-            val (wantLeft, wantRight) = line[2].split(",")
-            val x = 10000000000000UL + wantLeft.split("=")[1].toULong()
-            val y = 10000000000000UL + wantRight.split("=")[1].toULong()
+            val ca = (px * by - py * bx) / (ax * by - bx * ay)
+            val cb = (px - ax * ca) / bx
 
-            val s = (x * y_b - y * x_b) / (x_a * y_b - x_b * y_a)
-            val t = (x - x_a * s) / x_b
-
-            Pair(s, t)
+            if (ca % 1.toBigDecimal() == 0.toBigDecimal() && (cb % 1.toBigDecimal() == 0.toBigDecimal()) &&
+                ca * ax + cb * bx == px &&
+                ca * ay + cb * by == py)
+                Pair(ca, cb)
+            else
+                Pair(0.toBigDecimal(), 0.toBigDecimal())
+        }
+        .map {
+            println(it)
+            it
         }
         .sumOf {
-            it.first * 3UL + it.second
+            it.first * 3.toBigDecimal() + it.second
         }
     println(result)
 }
