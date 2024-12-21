@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="Day 6 &#10;:(">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day07.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day08.kt" afterDir="false" />
+    <list default="true" id="2fc41610-4d2a-4c1a-9f62-bff4522258db" name="Changes" comment="Part One">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day16.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day17.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day17.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,17 @@
     "Kotlin.Day06_2Kt.executor": "Run",
     "Kotlin.Day06_3Kt.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
+    "Kotlin.Day08Kt.executor": "Run",
+    "Kotlin.Day09Kt.executor": "Run",
+    "Kotlin.Day10Kt.executor": "Run",
+    "Kotlin.Day11Kt.executor": "Run",
+    "Kotlin.Day12Kt.executor": "Run",
+    "Kotlin.Day13Kt.executor": "Run",
+    "Kotlin.Day14Kt.executor": "Run",
+    "Kotlin.Day15Kt.executor": "Run",
+    "Kotlin.Day16Kt.executor": "Run",
+    "Kotlin.Day17Kt (1).executor": "Run",
+    "Kotlin.Day17Kt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -52,7 +63,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -62,44 +73,37 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day08Kt">
-    <configuration name="Day05Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day05Kt" />
+  <component name="RunManager" selected="Kotlin.Day17Kt (1)">
+    <configuration name="Day13Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day13Kt" />
       <module name="aoc2024" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day06Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day06Kt" />
+    <configuration name="Day15Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day15Kt" />
       <module name="aoc2024" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day06Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day06Kt" />
+    <configuration name="Day16Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day16Kt" />
       <module name="aoc2024" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day06_2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day06_2Kt" />
+    <configuration name="Day17Kt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day17Kt" />
       <module name="aoc2024" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day07Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day07Kt" />
-      <module name="aoc2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day08Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Day08Kt" />
+    <configuration name="Day17Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Day17Kt" />
       <module name="aoc2024" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Day08Kt" />
-        <item itemvalue="Kotlin.Day07Kt" />
-        <item itemvalue="Kotlin.Day06Kt" />
-        <item itemvalue="Kotlin.Day06_2Kt" />
-        <item itemvalue="Kotlin.Day06Kt" />
+        <item itemvalue="Kotlin.Day17Kt (1)" />
+        <item itemvalue="Kotlin.Day17Kt" />
+        <item itemvalue="Kotlin.Day16Kt" />
+        <item itemvalue="Kotlin.Day15Kt" />
+        <item itemvalue="Kotlin.Day13Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +139,14 @@
       <workItem from="1733300784050" duration="8452000" />
       <workItem from="1733398713702" duration="13288000" />
       <workItem from="1733482852756" duration="24404000" />
-      <workItem from="1733522888867" duration="13926000" />
+      <workItem from="1733522888867" duration="28046000" />
+      <workItem from="1733821956897" duration="3360000" />
+      <workItem from="1733922622465" duration="12917000" />
+      <workItem from="1733943748618" duration="889000" />
+      <workItem from="1733944647191" duration="2599000" />
+      <workItem from="1733992136510" duration="17635000" />
+      <workItem from="1734085811055" duration="14211000" />
+      <workItem from="1734121691828" duration="52704000" />
     </task>
     <task id="LOCAL-00001" summary="Day 3&#10;REGEX">
       <option name="closed" value="true" />
@@ -185,7 +196,135 @@
       <option name="project" value="LOCAL" />
       <updated>1733510098186</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Day 6 &amp; 7">
+      <option name="closed" value="true" />
+      <created>1733675478727</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733675478727</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Day 8">
+      <option name="closed" value="true" />
+      <created>1733754271604</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733754271604</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Day 9">
+      <option name="closed" value="true" />
+      <created>1733754289526</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733754289526</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Day 9 WIP">
+      <option name="closed" value="true" />
+      <created>1733761114094</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733761114094</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Day 9 fix">
+      <option name="closed" value="true" />
+      <created>1733826202320</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733826202320</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Day 10">
+      <option name="closed" value="true" />
+      <created>1733826210244</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733826210244</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Day 11 Part One">
+      <option name="closed" value="true" />
+      <created>1733927983763</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733927983763</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Day 11 Part Two">
+      <option name="closed" value="true" />
+      <created>1734015135355</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734015135356</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Day 12">
+      <option name="closed" value="true" />
+      <created>1734015144491</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1734015144491</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Day 12">
+      <option name="closed" value="true" />
+      <created>1734123102136</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734123102136</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Day 13">
+      <option name="closed" value="true" />
+      <created>1734123109382</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1734123109382</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Day 13 ulongo">
+      <option name="closed" value="true" />
+      <created>1734123219813</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1734123219813</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Day 14">
+      <option name="closed" value="true" />
+      <created>1734224723708</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1734224723708</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Day 13">
+      <option name="closed" value="true" />
+      <created>1734228297826</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1734228297826</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Day 15">
+      <option name="closed" value="true" />
+      <created>1734355017320</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1734355017320</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Part One">
+      <option name="closed" value="true" />
+      <created>1734452131057</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1734452131057</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +337,39 @@
     <MESSAGE value="Add timing" />
     <MESSAGE value="Day 6 &#10;Part no why you no work?" />
     <MESSAGE value="Day 6 &#10;:(" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 6 &#10;:(" />
+    <MESSAGE value="Day 6 &amp; 7" />
+    <MESSAGE value="Day 8" />
+    <MESSAGE value="Day 9" />
+    <MESSAGE value="Day 9 WIP" />
+    <MESSAGE value="Day 9 fix" />
+    <MESSAGE value="Day 10" />
+    <MESSAGE value="Day 11 Part One" />
+    <MESSAGE value="Day 11 Part Two" />
+    <MESSAGE value="Day 12" />
+    <MESSAGE value="Day 13 ulongo" />
+    <MESSAGE value="Day 14" />
+    <MESSAGE value="Day 13" />
+    <MESSAGE value="Day 15" />
+    <MESSAGE value="Part One" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part One" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="13" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="28" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/Day16.kt</url>
+          <line>93</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
