@@ -53,42 +53,6 @@ fun main() {
     part2()
 }
 
-fun findRegisterA(program: List<Int>): BigInteger {
-    val pointers = program.find{it == 5}
-
-
-
-
-    return
-}
-
-fun reverseStep(program: List<Int>, pointer: Int): BigInteger {
-    if (program.getOrNull(pointer) == null)
-        throw Exception("Invalid pointer $pointer")
-
-    when (program[pointer]) {
-        5 -> revers5()
-    }
-}
-
-fun revers5(posRegA: Sequence<(BigInteger) -> Boolean>?, posRegB: Sequence<BigInteger>?, posRegC: Sequence<BigInteger>?, program: List<Int>, pointer: Int): Triple<Sequence<BigInteger>?, Sequence<BigInteger>?, Sequence<BigInteger>?> {
-    if (program.getOrNull(pointer) != 5)
-        throw Exception("Bad pointer: $pointer")
-
-    val operand = program[pointer + 1]
-
-    when (operand) {
-        in 0..3 -> {
-            if (operand % 8 == 0) {
-                return Triple(posRegA, posRegB, posRegC)
-            }
-        }
-        4 -> {
-            if ()
-        }
-    }
-}
-
 fun executeUntilOutput(rA: ULong, rB: ULong, rC: ULong, instructions: List<Int>, p: Int): List<ULong>? {
     var regA = rA
     var regB = rB
